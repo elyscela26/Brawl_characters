@@ -21,8 +21,8 @@ class BrawlerRepository constructor(
         try {
             val brawlerData = brawlerRetrofit.get()
             val brawlerMap = networkMapper.mapFromEntityList(brawlerData)
-            for (tempPlace in brawlerMap){
-                brawlerDao.insert(cacheMapper.mapToEntity(tempPlace))
+            for (tempBrawl in brawlerMap){
+                brawlerDao.insert(cacheMapper.mapToEntity(tempBrawl))
             }
             val cacheBrawl = brawlerDao.get()
             emit(DataState.Success(cacheMapper.mapFromEntityList(cacheBrawl)))
