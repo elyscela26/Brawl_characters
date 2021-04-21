@@ -11,12 +11,12 @@ class BrawlerNetworkEntity (
     @SerializedName("name")
     @Expose
     var name: String,
-
-    @SerializedName("url")
+    
+    @SerializedName("description")
     @Expose
-    var url: String,
+    var description: String,
 
-    @SerializedName("descripcion")
+    @SerializedName("image")
     @Expose
-    var descripcion: String,
+    var image: String,
 )
