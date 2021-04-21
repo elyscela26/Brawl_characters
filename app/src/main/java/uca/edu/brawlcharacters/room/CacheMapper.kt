@@ -13,8 +13,8 @@ constructor():
         return Brawler(
             id = entity.id,
             name = entity.name,
-            url = entity.url,
-            descripcion = entity.descripcion
+            description = entity.description,
+            image = entity.image
         )
     }
 
@@ -22,8 +22,8 @@ constructor():
         return BrawlerCacheEntity(
             id = domainModel.id,
             name = domainModel.name,
-            url = domainModel.url,
-            descripcion = domainModel.descripcion
+            description = domainModel.description,
+            image = domainModel.image
         )
     }
 
