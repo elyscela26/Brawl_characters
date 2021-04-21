@@ -11,9 +11,9 @@ class BrawlerCacheEntity (
     var id: Int,
     @ColumnInfo(name = "name")
     var name: String,
-    @ColumnInfo(name = "url")
-    var url: String,
-    @ColumnInfo(name = "descripcion")
-    var descripcion: String
-
+    @ColumnInfo(name = "description")
+    var description: String,
+    @ColumnInfo(name = "image")
+    var image: String
+    
 )
