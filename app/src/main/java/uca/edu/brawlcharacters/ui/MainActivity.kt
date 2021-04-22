@@ -6,9 +6,9 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import uca.edu.brawlcharacters.R
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import uca.edu.brawlcharacters.R
 
 @ExperimentalCoroutinesApi
 @AndroidEntryPoint

@@ -10,14 +10,14 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import uca.edu.brawlcharacters.intent.Intent
-import uca.edu.brawlcharacters.repository.BrawlerRepository
+import uca.edu.brawlcharacters.repository.BrawlRepository
 import uca.edu.brawlcharacters.utils.DataState
 import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
 class MainViewModel
 @ViewModelInject constructor(
-    private val placeRepository: BrawlerRepository,
+    private val brawlRepository: BrawlRepository,
     @Assisted private val savedStateHandle: SavedStateHandle
 ) : ViewModel(){
     val userIntent = Channel<Intent>(Channel.UNLIMITED)
@@ -32,8 +32,8 @@ class MainViewModel
         viewModelScope.launch {
             userIntent.consumeAsFlow().collect{intn ->
                 when(intn){
-                    is Intent.GetBrawlerEvent -> {
-                        placeRepository.getBrawler()
+                    is Intent.GetBrawlEvent -> {
+                        brawlRepository.getBrawls()
                             .onEach {
                                 _dataState.value = it
                             }

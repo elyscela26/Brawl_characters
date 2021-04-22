@@ -2,13 +2,13 @@ package uca.edu.brawlcharacters.di
 
 import android.content.Context
 import androidx.room.Room
+import uca.edu.brawlcharacters.room.BrawlDao
+import uca.edu.brawlcharacters.room.BrawlDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
-import uca.edu.brawlcharacters.room.BrawlerDao
-import uca.edu.brawlcharacters.room.BrawlerDatabase
 import javax.inject.Singleton
 
 
@@ -18,13 +18,13 @@ object RoomModule {
 
     @Singleton
     @Provides
-    fun provideBrawlerDb(@ApplicationContext context: Context): BrawlerDatabase {
-        return Room.databaseBuilder(context, BrawlerDatabase::class.java, BrawlerDatabase.DATABASE_NAME).fallbackToDestructiveMigration().build()
+    fun providePlaceDb(@ApplicationContext context: Context): BrawlDatabase{
+        return Room.databaseBuilder(context, BrawlDatabase::class.java, BrawlDatabase.DATABASE_NAME).fallbackToDestructiveMigration().build()
     }
 
     @Singleton
     @Provides
-    fun provideBrawlerDao(brawlerDatabase: BrawlerDatabase): BrawlerDao {
-        return brawlerDatabase.brawlerDao()
+    fun providePlaceDao(brawlDatabase: BrawlDatabase): BrawlDao{
+        return brawlDatabase.brawlDao()
     }
 }

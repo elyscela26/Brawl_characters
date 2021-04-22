@@ -1,14 +1,14 @@
 package uca.edu.brawlcharacters.retrofit
 
-import uca.edu.brawlcharacters.model.Brawler
-import uca.edu.brawlcharacters.utils.EntityMapper
 import javax.inject.Inject
+import uca.edu.brawlcharacters.model.Brawl
+import uca.edu.brawlcharacters.utils.EntityMapper
 
 class NetworkMapper
 @Inject
-constructor() : EntityMapper<BrawlerNetworkEntity, Brawler>{
-    override fun mapFromEntity(entity: BrawlerNetworkEntity): Brawler {
-        return Brawler(
+constructor() : EntityMapper<BrawlNetworkEntity, Brawl>{
+    override fun mapFromEntity(entity: BrawlNetworkEntity): Brawl {
+        return Brawl(
             id = entity.id,
             name = entity.name,
             description = entity.description,
@@ -16,17 +16,16 @@ constructor() : EntityMapper<BrawlerNetworkEntity, Brawler>{
         )
     }
 
-    override fun mapToEntity(domainModel: Brawler): BrawlerNetworkEntity {
-        return BrawlerNetworkEntity(
+    override fun mapToEntity(domainModel: Brawl): BrawlNetworkEntity {
+        return  BrawlNetworkEntity(
             id = domainModel.id,
             name = domainModel.name,
             description = domainModel.description,
             image = domainModel.image
-            
         )
     }
 
-    fun mapFromEntityList(entities: List<BrawlerNetworkEntity>): List<Brawler>{
-        return entities.map{ mapFromEntity(it) }
+    fun mapFromEntityList(entities: List<BrawlNetworkEntity>): List<Brawl>{
+        return entities.map { mapFromEntity(it) }
     }
 }

@@ -11,12 +11,12 @@ import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import uca.edu.brawlcharacters.ui.MainViewModel
+import javax.inject.Inject
 import uca.edu.brawlcharacters.R
 import uca.edu.brawlcharacters.intent.Intent
-import uca.edu.brawlcharacters.ui.MainViewModel
-import uca.edu.brawlcharacters.utils.AdapterBrawlers
+import uca.edu.brawlcharacters.utils.AdapterBrawl
 import uca.edu.brawlcharacters.utils.DataState
-import javax.inject.Inject
 
 
 @ExperimentalCoroutinesApi
@@ -28,7 +28,7 @@ constructor() : Fragment(R.layout.fragment_first) {
     private val viewModel: MainViewModel by viewModels()
 
     @Inject
-    lateinit var adapterBrawlers: AdapterBrawlers
+    lateinit var adapterBrawls: AdapterBrawl
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -42,11 +42,11 @@ constructor() : Fragment(R.layout.fragment_first) {
         layoutManager.reverseLayout = true
         layoutManager.stackFromEnd = true
         recyclerViewPlaces.layoutManager = layoutManager
-        recyclerViewPlaces.adapter = adapterBrawlers
+        recyclerViewPlaces.adapter = adapterBrawls
 
         subscribeObservers()
         lifecycleScope.launch {
-            viewModel.userIntent.send(Intent.GetBrawlerEvent)
+            viewModel.userIntent.send(Intent.GetBrawlEvent)
         }
     }
 
@@ -56,7 +56,7 @@ constructor() : Fragment(R.layout.fragment_first) {
                 when(it){
                     is DataState.Success -> {
                         displayProgressBar(false)
-                        adapterBrawlers.setPlaces(it.brawler)
+                        adapterBrawls.setBrawls(it.brawls)
                     }
                     is DataState.Error -> {
                         displayProgressBar(false)

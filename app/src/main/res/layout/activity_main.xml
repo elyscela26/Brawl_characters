@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/main_fragment_container"
-        android:name="uca.edu.ni.brawlcharacters.fragment.MainNavigationHostFragment"
+        android:name="uca.edu.brawlcharacters.ui.fragment.MainNavigationHostFragment"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph"
         />

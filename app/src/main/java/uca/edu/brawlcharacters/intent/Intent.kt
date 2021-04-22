@@ -1,6 +1,6 @@
 package uca.edu.brawlcharacters.intent
 
 sealed class Intent{
-    object GetBrawlerEvent: Intent()
+    object GetBrawlEvent: Intent()
     object None: Intent()
 }

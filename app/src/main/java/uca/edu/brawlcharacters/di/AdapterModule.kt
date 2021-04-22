@@ -1,11 +1,11 @@
 package uca.edu.brawlcharacters.di
 
 import android.app.Application
+import uca.edu.brawlcharacters.utils.AdapterBrawl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
-import uca.edu.brawlcharacters.utils.AdapterBrawlers
 import javax.inject.Singleton
 
 @Module
@@ -14,7 +14,7 @@ object AdapterModule {
 
     @Singleton
     @Provides
-    fun provideAdapterGenres(application: Application): AdapterBrawlers{
-        return AdapterBrawlers()
+    fun provideAdapterGenres(application: Application): AdapterBrawl{
+        return AdapterBrawl()
     }
 }
