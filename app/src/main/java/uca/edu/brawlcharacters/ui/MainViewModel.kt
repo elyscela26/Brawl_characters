@@ -12,13 +12,12 @@ import kotlinx.coroutines.launch
 import uca.edu.brawlcharacters.intent.Intent
 import uca.edu.brawlcharacters.repository.BrawlRepository
 import uca.edu.brawlcharacters.utils.DataState
-import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
 class MainViewModel
 @ViewModelInject constructor(
-    private val brawlRepository: BrawlRepository,
-    @Assisted private val savedStateHandle: SavedStateHandle
+        private val brawlRepository: BrawlRepository,
+        @Assisted private val savedStateHandle: SavedStateHandle
 ) : ViewModel(){
     val userIntent = Channel<Intent>(Channel.UNLIMITED)
     private val _dataState= MutableStateFlow<DataState>(DataState.Idle)

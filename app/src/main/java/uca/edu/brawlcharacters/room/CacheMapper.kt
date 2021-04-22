@@ -1,7 +1,6 @@
 package uca.edu.brawlcharacters.room
 
 import uca.edu.brawlcharacters.model.Brawl
-import uca.edu.brawlcharacters.retrofit.BrawlNetworkEntity
 import uca.edu.brawlcharacters.utils.EntityMapper
 import javax.inject.Inject
 

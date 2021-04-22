@@ -1,7 +1,7 @@
 package uca.edu.brawlcharacters.retrofit
 
-import javax.inject.Inject
 import uca.edu.brawlcharacters.model.Brawl
+import javax.inject.Inject
 import uca.edu.brawlcharacters.utils.EntityMapper
 
 class NetworkMapper

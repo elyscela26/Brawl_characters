@@ -1,6 +1,5 @@
 package uca.edu.brawlcharacters.di
 
-import uca.edu.brawlcharacters.retrofit.BrawlRetrofit
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -9,6 +8,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import uca.edu.brawlcharacters.retrofit.BrawlRetrofit
 import javax.inject.Singleton
 
 @Module
@@ -32,7 +32,7 @@ object RetrofitModule {
 
     @Singleton
     @Provides
-    fun provideBrawlService(retrofit: Retrofit.Builder): BrawlRetrofit{
+    fun provideBrawlService(retrofit: Retrofit.Builder): BrawlRetrofit {
         return retrofit.build().create(BrawlRetrofit::class.java)
     }
 }
