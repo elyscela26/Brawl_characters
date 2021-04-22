@@ -41,8 +41,8 @@ constructor() : Fragment(R.layout.fragment_first) {
             )
         layoutManager.reverseLayout = true
         layoutManager.stackFromEnd = true
-        recyclerViewPlaces.layoutManager = layoutManager
-        recyclerViewPlaces.adapter = adapterBrawls
+        recyclerViewBrawl.layoutManager = layoutManager
+        recyclerViewBrawl.adapter = adapterBrawls
 
         subscribeObservers()
         lifecycleScope.launch {
